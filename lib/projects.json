@@ -3,43 +3,37 @@
     "slug": "tummly",
     "title": "Tummly",
     "category": "UI/UX",
-    "kicker": "Product experience study",
-    "description": "Tummly is a real UK restaurant SaaS project I worked on remotely at 5Sum. I built React interfaces and ASP.NET Core APIs supporting trial onboarding, email OTP verification, administrator review, invitation-based account activation and role-controlled access. Photography shown is contextual stock imagery, not a screenshot of the live application.",
+    "kicker": "Restaurant SaaS / digital product",
+    "description": "Tummly is a UK restaurant SaaS platform developed during my work with 5Sum Ltd. I implemented responsive React interfaces and ASP.NET Core features for trial onboarding, email OTP verification, administrator review, invitation-based account activation and role-controlled access.",
     "scope": "Full-stack SaaS development, onboarding flows, access management and interface implementation",
     "tools": "React, ASP.NET Core, EF Core, SQL Server, JWT, Figma handoff",
-    "status": "Real professional engineering work; reference photography is illustrative, not a product screenshot",
     "cover": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=85",
-    "number": "01",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "01"
   },
   {
     "slug": "verendo",
     "title": "Verendo",
     "category": "Brand Identity",
     "kicker": "Creative direction & identity",
-    "description": "Verendo is my independent digital services agency project, focused on web development, AI automation and digital marketing. The work includes its visual direction and website presence. The photographic image is licensed reference imagery, not a screenshot of the live Verendo website.",
-    "scope": "Independent digital agency concept, website direction and brand system",
+    "description": "Verendo is my independent digital services agency, focused on website development, AI solutions and digital marketing. I developed its web presence and explored its visual identity through typography, layout, color and digital storytelling.",
+    "scope": "Website direction, visual identity and digital experience",
     "tools": "Next.js, React, Figma, Photoshop, Illustrator",
-    "status": "Real independent studio project; editorial imagery is illustrative",
     "cover": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1800&q=85",
-    "number": "02",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "02"
   },
   {
     "slug": "aura-attire",
     "title": "Aura & Attire",
     "category": "Brand Identity",
     "kicker": "Luxury identity concept",
-    "description": "An conceptual beauty and fashion identity that uses quiet typography, generous space and elevated product presentation to communicate a refined point of view.",
+    "description": "A conceptual beauty and fashion identity that uses quiet typography, generous space and elevated product presentation to communicate a refined point of view.",
     "scope": "Wordmark direction, packaging visuals, art direction",
     "tools": "Illustrator, Photoshop, Figma",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=85",
-    "number": "03",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "03"
   },
   {
     "slug": "burger-house",
@@ -49,11 +43,9 @@
     "description": "A punchy social-first direction with lively headlines, high-contrast appetizing illustration and a modular creative system for campaign rollout.",
     "scope": "Campaign key visual, social templates, typography",
     "tools": "Photoshop, Illustrator, Canva",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1678110707289-ab14382a1625?auto=format&fit=crop&w=1800&q=85",
-    "number": "04",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "04"
   },
   {
     "slug": "nexora",
@@ -63,11 +55,9 @@
     "description": "A structured identity exploration for a contemporary technology company, with abstract form and a flexible design language.",
     "scope": "Brand language, visual system, collateral",
     "tools": "Illustrator, Figma, Photoshop",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1800&q=85",
-    "number": "05",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "05"
   },
   {
     "slug": "meridian-dashboard",
@@ -77,11 +67,9 @@
     "description": "An editorial interface study focused on clear data hierarchy, thoughtful density and simple visual storytelling for business reporting.",
     "scope": "UI direction, dashboard components, information hierarchy",
     "tools": "Figma",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85",
-    "number": "06",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "06"
   },
   {
     "slug": "monarch-motors",
@@ -91,11 +79,9 @@
     "description": "A bold motion-art direction imagining a performance-led automotive launch, shaped around cinematic contrast and speed.",
     "scope": "Motion storyboards, key frames, promotional graphics",
     "tools": "After Effects, Photoshop",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85",
-    "number": "07",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "07"
   },
   {
     "slug": "atelier-no-9",
@@ -105,11 +91,9 @@
     "description": "A restrained identity exploration embracing materiality, sophisticated typographic rhythm and expressive packaging compositions.",
     "scope": "Packaging, visual identity, art direction",
     "tools": "Illustrator, Photoshop",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85",
-    "number": "08",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "08"
   },
   {
     "slug": "the-good-table",
@@ -119,11 +103,9 @@
     "description": "A cheerful and characterful campaign visual system for a modern food concept, balancing warm colors and striking hierarchy.",
     "scope": "Digital posters, social media creative, visual direction",
     "tools": "Photoshop, Canva",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1800&q=85",
-    "number": "09",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "09"
   },
   {
     "slug": "pulse-finance",
@@ -133,11 +115,9 @@
     "description": "A high-clarity experience concept for financial data, bringing important decisions and information to the forefront.",
     "scope": "Dashboard UI, components, data visualization",
     "tools": "Figma",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=85",
-    "number": "10",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "10"
   },
   {
     "slug": "lumen-skincare",
@@ -147,11 +127,9 @@
     "description": "A skincare range concept built on minimal packaging, tactile color and considered space.",
     "scope": "Package layouts, identity exploration, product visuals",
     "tools": "Illustrator, Photoshop",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1800&q=85",
-    "number": "11",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "11"
   },
   {
     "slug": "kinetic-type",
@@ -161,11 +139,9 @@
     "description": "A study of movement, contrast and cadence through typography-led compositions designed to translate into short-form motion.",
     "scope": "Type exploration, keyframes, motion direction",
     "tools": "After Effects, Illustrator",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?auto=format&fit=crop&w=1800&q=85",
-    "number": "12",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "12"
   },
   {
     "slug": "urban-estate",
@@ -175,11 +151,9 @@
     "description": "A digital property experience concept that foregrounds legibility, photography and calm navigation for browsing spaces.",
     "scope": "Responsive page concepts, interface layout",
     "tools": "Figma",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85",
-    "number": "13",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "13"
   },
   {
     "slug": "stride-athletics",
@@ -189,11 +163,9 @@
     "description": "A kinetic campaign concept for athletic performance, bringing impactful headlines and strong graphic energy to social channels.",
     "scope": "Campaign identity, social key visuals",
     "tools": "Photoshop, Illustrator",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1800&q=85",
-    "number": "14",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "14"
   },
   {
     "slug": "nomad-collective",
@@ -203,11 +175,9 @@
     "description": "An expressive brand exploration using playful forms and a crisp system that can stretch across editorial, packaging and digital assets.",
     "scope": "Visual identity, brand patterns, collateral",
     "tools": "Illustrator, Figma",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1800&q=85",
-    "number": "15",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "15"
   },
   {
     "slug": "forma-interiors",
@@ -217,11 +187,9 @@
     "description": "A spatially inspired identity exploration for an interiors practice, with calm geometry and architectural references.",
     "scope": "Brand expression, art direction, digital concept",
     "tools": "Figma, Illustrator",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85",
-    "number": "16",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "16"
   },
   {
     "slug": "bloom-botanicals",
@@ -231,11 +199,9 @@
     "description": "A nature-inspired packaging system with a soft tonal palette, generous layouts and quietly expressive product direction.",
     "scope": "Packaging system, identity, art direction",
     "tools": "Illustrator, Photoshop",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=1800&q=85",
-    "number": "17",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "17"
   },
   {
     "slug": "noir-parfum",
@@ -245,11 +211,9 @@
     "description": "A moody visual direction exploring luxury fragrance advertising through contrast, restrained typography and atmospheric product treatment.",
     "scope": "Campaign creative, compositions, social system",
     "tools": "Photoshop, Illustrator",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=1800&q=85",
-    "number": "18",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "18"
   },
   {
     "slug": "orbit-app",
@@ -259,11 +223,9 @@
     "description": "A mobile interface exploration centered on friendly structure, accessible spacing and easy discovery.",
     "scope": "Mobile UI patterns, interaction flows, component thinking",
     "tools": "Figma",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1800&q=85",
-    "number": "19",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "19"
   },
   {
     "slug": "chromatic-futures",
@@ -273,10 +235,8 @@
     "description": "An abstract direction exploring dimensional form, color and dynamic composition as foundations for an experimental motion identity.",
     "scope": "Motion direction, 3D-inspired key art, color exploration",
     "tools": "After Effects, Illustrator",
-    "status": "Self-initiated concept / photographed image is an Unsplash reference",
     "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
     "study": "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1800&q=85",
-    "number": "20",
-    "image_kind": "Unsplash stock photograph — project mood reference, not an original client deliverable"
+    "number": "20"
   }
 ]

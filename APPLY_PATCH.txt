@@ -1,0 +1,21 @@
+USAMA DESIGN PORTFOLIO — CLEAN CASE STUDIES PATCH
+
+This patch removes the oversized "Project context" warning cards from ALL 20 case studies,
+removes the Work transparency paragraph, removes the About portfolio note,
+and simplifies on-screen project labels and descriptions.
+
+TO APPLY:
+1. Keep your current GitHub/Vercel project (including its updated Next.js dependencies).
+2. Extract the contents of this ZIP into your existing usama-design-portfolio directory.
+3. Replace files when prompted. DO NOT delete other files.
+4. In VS Code terminal, run:
+   npm run dev
+5. Preview a case study on mobile and desktop, then:
+   git add lib/projects.json public/projects-data.js public/site.js public/styles.css site/index.html site/styles.css static-site/index.html static-site/projects-data.js static-site/site.js static-site/styles.css
+   git commit -m "Remove intrusive portfolio disclaimers"
+   git push origin main
+6. Vercel will deploy automatically.
+
+NO package.json or package-lock.json is included to avoid reversing your security update.
+PHOTO-SOURCES.md is retained in your repository for content provenance; there is no giant disclaimer in the UI.
+The images themselves have not been replaced with new original client photography.

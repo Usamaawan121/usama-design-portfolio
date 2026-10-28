@@ -31,21 +31,19 @@
     const idx = projects.findIndex((p) => p.slug === project.slug);
     const next = projects[(idx + 1) % projects.length];
     const prev = projects[(idx - 1 + projects.length) % projects.length];
-    const isReal = project.slug === 'tummly' || project.slug === 'verendo';
     const title = htmlEscape(project.title);
     return `<section class="detail-hero">
-      <div class="detail-nav"><a href="/work" data-route>← Back to all projects</a><span>${htmlEscape(project.number)} / 20</span><a href="/work/${next.slug}" data-route>Next project ↗</a></div>
-      <p class="detail-eyebrow"><span class="mini-diamond"></span> ${htmlEscape(project.category)} / ${isReal ? 'Independent work' : 'Self-initiated concept'}</p>
+      <div class="detail-nav"><a href="/work" data-route>← All work</a><span>CASE STUDY / ${htmlEscape(project.number)} OF 20</span><a href="/work/${next.slug}" data-route>Next project ↗</a></div>
+      <p class="detail-eyebrow"><span class="mini-diamond"></span> ${htmlEscape(project.category)}</p>
       <h1 class="detail-title">${title}<span style="color:var(--mint)">.</span></h1>
-      <h2 class="detail-subtitle">${htmlEscape(project.kicker)}</h2>
+      <h2 class="detail-subtitle">${htmlEscape(project.kicker)}</h2><div class="case-quick-links"><span>${htmlEscape(project.category).toUpperCase()}</span><span>DESIGN / DETAIL / DIRECTION</span><a href="#case-gallery" data-jump>JUMP TO VISUALS ↓</a></div>
     </section>
-    <div class="detail-cover zoom-frame"><span class="zoom-badge">CLICK TO ENLARGE ↗</span><img src="${project.cover}" alt="Curated photographic reference for ${title}" data-zoomable width="1200" height="850"></div>
+    <div class="detail-cover zoom-frame"><span class="zoom-badge">CLICK TO ENLARGE ↗</span><img src="${project.cover}" alt="${title} project photograph" data-zoomable width="1200" height="850"></div>
     <section class="detail-info"><div class="detail-index"><span class="mini-diamond"></span> / THE THINKING BEHIND THE WORK</div>
       <div class="detail-body"><h2>Built around <em style="color:var(--mint);font-style:normal">a clear idea.</em></h2><p>${htmlEscape(project.description)}</p>
       <dl class="detail-meta"><div><dt>DISCIPLINE</dt><dd>${htmlEscape(project.category)}</dd></div><div><dt>FOCUS</dt><dd>${htmlEscape(project.scope)}</dd></div><div><dt>TOOLS</dt><dd>${htmlEscape(project.tools)}</dd></div></dl></div>
     </section>
-    <section class="detail-gallery"><img src="${project.study}" alt="${title} supporting editorial photograph" data-zoomable loading="lazy" width="1200" height="850"><img src="${project.cover}" alt="${title} supporting photographic reference" data-zoomable loading="lazy" width="1200" height="850"></section>
-    <div class="detail-disclaimer"><span class="tiny-circle"></span> <strong>Project context:</strong> ${htmlEscape(project.status)}. Photography is curated editorial reference imagery from Unsplash. These images are not client deliverables, live product screenshots or proof of campaign results.</div>
+    <div class="case-gallery-heading" id="case-gallery"><span>02 / VISUAL EXPLORATION</span><h2>Closer to <em>the details.</em></h2><span>CLICK AN IMAGE TO ZOOM</span></div><section class="detail-gallery"><img src="${project.study}" alt="${title} gallery image" data-zoomable loading="lazy" width="1200" height="850"><img src="${project.cover}" alt="${title} project gallery image" data-zoomable loading="lazy" width="1200" height="850"></section>
     <div class="detail-bottom"><p>UP NEXT / ${htmlEscape(next.category).toUpperCase()}</p><a href="/work/${next.slug}" data-route>${htmlEscape(next.title)} <span>↗</span></a><p><a href="/work/${prev.slug}" data-route style="font:12px var(--sans);letter-spacing:.1em;color:var(--muted)">← PREVIOUS PROJECT</a></p></div>`;
   }
 
@@ -101,6 +99,8 @@
       showRoute();
       return;
     }
+    const jump=event.target.closest?.('[data-jump]');
+    if(jump){ event.preventDefault(); document.querySelector(jump.getAttribute('href'))?.scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'});return;}
     if (event.target.closest?.('#back-to-top')) {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' });
@@ -156,6 +156,10 @@
     });
     const title=$('.page-view:not([hidden]) .hero-title');
     if(title) title.style.setProperty('--titleY',`${Math.min(125,scrollY*.17)}px`);
+    const spotlight=$('.page-view:not([hidden]) .spotlight-stage-image');
+    if(spotlight){const r=spotlight.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){spotlight.style.setProperty('--spotlightDrift',`${clamp((r.top-innerHeight*.5)*-.024,-18,18).toFixed(1)}px`);}}
+    const sculpture=$('.page-view:not([hidden]) .statement-sculpture');
+    if(sculpture){const r=sculpture.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){sculpture.style.setProperty('--sculptureTurn',`${clamp((innerHeight/2-r.top)*.018,-8,12).toFixed(2)}deg`);}}
     const scene=$('.page-view:not([hidden]) .hero-scene');
     if(scene) scene.style.setProperty('--sceneZoom',`${(1 + Math.min(.25,scrollY/2600)).toFixed(3)}`);
   }
@@ -226,21 +230,33 @@
 
   // Zoom/lightbox: buttons, mouse wheel, drag, touch pinch, Esc.
   const zoom=$('#zoom-overlay'),surface=$('#zoom-surface'),zoomImg=$('#zoom-image');
-  const resetBtn=$('#zoom-reset');
+  const resetBtn=$('#zoom-reset'),zoomRange=$('#zoom-range');
+  let imageSequence=[],imageIndex=0,originFocus=null;
   let zoomScale=1,panX=0,panY=0,pointers=new Map(),dragOrigin=null,lastPinch=0;
   const syncZoom=()=>{
     if(zoomImg)zoomImg.style.transform=`translate3d(${panX}px,${panY}px,0) scale(${zoomScale})`;
     if(resetBtn)resetBtn.textContent=`${Math.round(zoomScale*100)}%`;
+    if(zoomRange)zoomRange.value=String(Math.round(zoomScale*100));
   };
   function openZoom(img){
     if(!zoom||!zoomImg)return;
+    originFocus=document.activeElement;
+    imageSequence=$$('.page-view:not([hidden]) .detail-cover img,.page-view:not([hidden]) .detail-gallery img');
+    imageIndex=Math.max(0,imageSequence.indexOf(img));
     zoomImg.src=img.currentSrc||img.src;zoomImg.alt=img.alt||'Enlarged project photograph';
     $('#zoom-title').textContent=img.closest('.page-view')?.querySelector('.detail-title')?.textContent||'PROJECT IMAGE';
     zoom.hidden=false;zoom.setAttribute('aria-hidden','false');document.body.classList.add('zoom-open');
     zoomScale=1;panX=panY=0;syncZoom();$('#zoom-close')?.focus();
   }
-  function closeZoom(){if(!zoom||zoom.hidden)return;zoom.hidden=true;zoom.setAttribute('aria-hidden','true');document.body.classList.remove('zoom-open');zoomImg?.removeAttribute('src');pointers.clear();}
+  function closeZoom(){if(!zoom||zoom.hidden)return;zoom.hidden=true;zoom.setAttribute('aria-hidden','true');document.body.classList.remove('zoom-open');zoomImg?.removeAttribute('src');pointers.clear();if(originFocus?.focus)originFocus.focus();}
   const setScale=(s)=>{zoomScale=clamp(s,.65,4);if(zoomScale<=1){panX=0;panY=0;}syncZoom();};
+  const navigateZoom=(delta)=>{
+    if(!imageSequence.length)return;
+    imageIndex=(imageIndex+delta+imageSequence.length)%imageSequence.length;
+    const img=imageSequence[imageIndex];zoomImg.src=img.currentSrc||img.src;zoomImg.alt=img.alt||'Project image';
+    zoomScale=1;panX=panY=0;syncZoom();
+  };
+  zoomRange?.addEventListener('input',()=>setScale(Number(zoomRange.value)/100));
   document.addEventListener('click',e=>{
     const img=e.target.closest?.('.detail-cover img,.detail-gallery img');
     if(img&&!zoom?.contains(img)){openZoom(img);return;}
@@ -248,8 +264,11 @@
     else if(e.target.closest?.('#zoom-in'))setScale(zoomScale+.25);
     else if(e.target.closest?.('#zoom-out'))setScale(zoomScale-.25);
     else if(e.target.closest?.('#zoom-reset')){panX=panY=0;setScale(1);}
+    else if(e.target.closest?.('#zoom-prev'))navigateZoom(-1);
+    else if(e.target.closest?.('#zoom-next'))navigateZoom(1);
   });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeZoom(); if(zoom&&!zoom.hidden){if(e.key==='+')setScale(zoomScale+.25);if(e.key==='-')setScale(zoomScale-.25)}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeZoom(); if(zoom&&!zoom.hidden){if(e.key==='+')setScale(zoomScale+.25);if(e.key==='-')setScale(zoomScale-.25);
+    if(e.key==='ArrowLeft'&&!e.target.matches('input'))navigateZoom(-1);if(e.key==='ArrowRight'&&!e.target.matches('input'))navigateZoom(1)}});
   surface?.addEventListener('wheel',e=>{e.preventDefault();setScale(zoomScale*(e.deltaY<0?1.12:.89))},{passive:false});
   surface?.addEventListener('pointerdown',e=>{surface.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});dragOrigin={x:e.clientX,y:e.clientY,px:panX,py:panY};});
   surface?.addEventListener('pointermove',e=>{
@@ -261,6 +280,18 @@
   function endPointer(e){pointers.delete(e.pointerId);lastPinch=0;dragOrigin=null;}
   surface?.addEventListener('pointerup',endPointer);surface?.addEventListener('pointercancel',endPointer);
 
+  // Kinetic depth on editorial spotlight; never blocks clicks or touch scrolling.
+  if(finePointer && !reducedMotion){
+    const spotlight=$('.spotlight-stage');
+    spotlight?.addEventListener('pointermove',e=>{
+      const box=spotlight.getBoundingClientRect();
+      const x=((e.clientX-box.left)/box.width-.5)*2, y=((e.clientY-box.top)/box.height-.5)*2;
+      spotlight.style.setProperty('--spotlightX',`${(x*7).toFixed(2)}deg`);
+      spotlight.style.setProperty('--spotlightY',`${(-y*7).toFixed(2)}deg`);
+    },{passive:true});
+    spotlight?.addEventListener('pointerleave',()=>{spotlight.style.setProperty('--spotlightX','0deg');spotlight.style.setProperty('--spotlightY','0deg');});
+  }
+  // Pointer-free sections remain usable with keyboard and touch; animated on supported devices.
   // Line-by-line headline animation and reveal transitions.
   if(!reducedMotion){
     $('.hero-title')?.animate([{opacity:0,filter:'blur(16px)',transform:'translateY(55px)'},{opacity:1,filter:'blur(0px)',transform:'translateY(0px)'}],{duration:1100,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});
